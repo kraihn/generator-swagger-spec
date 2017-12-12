@@ -1,19 +1,24 @@
 language: node_js
 node_js:
+  - 'node'
   - 9
   - 8
   - 6
+
+env:
+  NPM_TOKEN
 
 deploy:
   - provider: npm
     email: kraihn@gmail.com
     api_key: $NPM_TOKEN
+    tag: next
     on:
       branch: next
-    tags: next
+      node: 'node'
+    tag: next
   - provider: npm
     email: kraihn@gmail.com
     api_key: $NPM_TOKEN
     on:
       branch: master
-
