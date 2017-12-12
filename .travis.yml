@@ -3,3 +3,17 @@ node_js:
   - 9
   - 8
   - 6
+
+deploy:
+  - provider: npm
+    email: kraihn@gmail.com
+    api_key: $NPM_TOKEN
+    on:
+      branch: next
+    tags: next
+  - provider: npm
+    email: kraihn@gmail.com
+    api_key: $NPM_TOKEN
+    on:
+      branch: master
+
